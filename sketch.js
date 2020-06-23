@@ -6,7 +6,7 @@ let cenario;
 let personagem;
 
 /**
- * Roda ante s do setup apenas uma vez
+ * Roda antes do setup, apenas uma vez
  */
 function preload() {
   imagemCenario = loadImage('assets/imagens/cenario/floresta.png');
@@ -16,15 +16,18 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);  
-  cenario = new Cenario(imagemCenario, 2);
+  cenario = new Cenario(imagemCenario, 5);
   personagem = new Personagem(imagemPersonagem);
   frameRate(30);
   somDoJogo.loop();
 }
   
 function draw() {
+  
+  /* Codigo de Teste */
   /*background(220);*/
   /*circle(mouseX, mouseY, 100);*/
+  
   cenario.exibe(); 
   cenario.move();
   personagem.exibe();
