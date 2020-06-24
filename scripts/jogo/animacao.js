@@ -25,7 +25,7 @@ class Animacao {
     }
 
     exibe() {
-        matriz = this.buildMatriz(this.mtzCol, this.mtzLin);
+        let matriz = this.buildMatriz(this.mtzCol, this.mtzLin);
         image(this.imagem, 
             this.x, this.y - this.altura, 
             this.largura, this.altura, 
