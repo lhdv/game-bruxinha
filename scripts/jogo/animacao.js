@@ -44,7 +44,7 @@ class Animacao {
     buildMatriz(c, l) {
         let matriz = [];
         for(let line = 0; line < l; line++) {
-            for(let column = 0; column < l; column++) {
+            for(let column = 0; column < c; column++) {
                 let positionX = column * this.largSprite;
                 let positionY = line * this.altSprite;
                 matriz.push([positionX, positionY]);

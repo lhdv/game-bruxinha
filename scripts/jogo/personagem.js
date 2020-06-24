@@ -33,7 +33,7 @@ class Personagem {
     buildMatriz(c, l) {
         let matriz = [];
         for(let line = 0; line < l; line++) {
-            for(let column = 0; column < l; column++) {
+            for(let column = 0; column < c; column++) {
                 let positionX = column * this.width;
                 let positionY = line * this.height;
                 matriz.push([positionX, positionY]);
