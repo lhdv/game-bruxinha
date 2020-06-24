@@ -32,14 +32,6 @@ class Personagem  extends Animacao{
     }
 
     estaColidindo(inimigo) {
-        /* Debug mode: desenha uma borda para verificar colisao */                
-        
-        rectMode(CORNER); // Default rectMode is CORNER
-        noFill();
-        rect(this.x, this.y, this.largura, this.altura);
-        rect(inimigo.x, inimigo.y, inimigo.largura, inimigo.altura);
-        
-       
         const precisao = 0.7;
         const colisao = collideRectRect(
             this.x, this.y, this.largura * precisao, this.altura * precisao,

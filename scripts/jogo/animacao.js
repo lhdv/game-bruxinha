@@ -28,6 +28,12 @@ class Animacao {
     }
 
     exibe() {
+         /* Debug mode: desenha uma borda para verificar colisao */                
+        
+        rectMode(CORNER); // Default rectMode is CORNER
+        noFill();
+        rect(this.x, this.y, this.largura, this.altura);
+        
         image(this.imagem, 
             this.x, this.y, 
             this.largura, this.altura, 
