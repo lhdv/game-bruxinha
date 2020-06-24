@@ -26,9 +26,9 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);  
   cenario = new Cenario(imagemCenario, 5);
-  personagem = new Personagem(4, 4, imagemPersonagem, 0, 110, 135, 220, 270, somPulo);
-  inimigo = new Inimigo(7, 4, imagemInimigo, width - 52, 52, 52, 104, 104);
-  npc = new NonPlayerCharacter(1, 1, imagemAbelha, width - 39.8, 39.8, 35.4, 398, 354, 250, 9);
+  personagem = new Personagem(4, 4, imagemPersonagem, 0, 20, 110, 135, 220, 270, somPulo);
+  inimigo = new Inimigo(7, 4, imagemInimigo, width - 52, 20, 52, 52, 104, 104);
+  npc = new NonPlayerCharacter(1, 1, imagemAbelha, width - 39.8, 250, 39.8, 35.4, 398, 354, 9);
   frameRate(30);
   somJogo.loop();
   somJogo.setVolume(0.2);

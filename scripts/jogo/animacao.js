@@ -1,5 +1,5 @@
 class Animacao {
-    constructor(mtzLin, mtzCol, imagem, x, largura, altura, largSprite, altSprite) {
+    constructor(mtzLin, mtzCol, imagem, x, variacaoY, largura, altura, largSprite, altSprite) {
         this.imagem = imagem;
         
         /* Largura/Altura da imagem final */
@@ -8,7 +8,8 @@ class Animacao {
 
         /* Posicao da imagem na tela */
         this.x = x;
-        this.y = height - this.altura;
+        this.variacaoY = variacaoY;
+        this.y = height - this.altura - this.variacaoY;
 
         /* Largura/Altura do sprite dentro da imagem */
         this.altSprite = altSprite;
