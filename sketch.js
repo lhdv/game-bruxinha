@@ -26,7 +26,19 @@ function setup() {
   frameRate(30);
   somDoJogo.loop();
 }
-  
+
+function keyPressed() {
+  if (key === 'ArrowUp') {
+    personagem.pula();
+  }
+}
+ 
+function keyTyped() {
+  if (key === ' ') {
+    personagem.pula();
+  }
+}
+
 function draw() {
   
   /* Codigo de Teste */
@@ -36,6 +48,7 @@ function draw() {
   cenario.exibe(); 
   cenario.move();
   personagem.exibe();
+  personagem.aplicaGravidade();
   inimigo.exibe();
   inimigo.move();
 }
