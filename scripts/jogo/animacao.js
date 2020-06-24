@@ -24,8 +24,6 @@ class Animacao {
         this.frameAtual = 0;
 
         this.matriz = this.buildMatriz(this.mtzCol, this.mtzLin);
-
-        console.log(height, this.altura, this.y);
     }
 
     exibe() {
