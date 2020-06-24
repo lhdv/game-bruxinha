@@ -1,5 +1,5 @@
 class Animacao {
-    constructor(mtzLin, mtzCol, imagem, x, largura, altura, altSprite, largSprite) {
+    constructor(mtzLin, mtzCol, imagem, x, largura, altura, largSprite, altSprite) {
         this.imagem = imagem;
         
         /* Posicao da imagem na tela */
@@ -22,14 +22,15 @@ class Animacao {
         this.frames = this.mtzLin * this.mtzCol;
 
         this.frameAtual = 0;
+
+        this.matriz = this.buildMatriz(this.mtzCol, this.mtzLin);
     }
 
     exibe() {
-        let matriz = this.buildMatriz(this.mtzCol, this.mtzLin);
         image(this.imagem, 
             this.x, this.y - this.altura, 
             this.largura, this.altura, 
-            this.getMatrizX(matriz, this.frameAtual), this.getMatrizY(matriz, this.frameAtual),
+            this.getMatrizX(this.matriz, this.frameAtual), this.getMatrizY(this.matriz, this.frameAtual),
             this.largSprite, this.altSprite);
         this.anima();
     }
