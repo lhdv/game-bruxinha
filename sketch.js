@@ -1,6 +1,7 @@
 let imagemCenario;
 let imagemPersonagem;
 let imagemInimigo;
+let imageGameOver;
 let somJogo;
 let somPulo;
 
@@ -15,6 +16,7 @@ function preload() {
   imagemCenario = loadImage('assets/imagens/cenario/floresta.png');
   imagemPersonagem = loadImage('assets/imagens/personagem/correndo.png');
   imagemInimigo = loadImage('assets/imagens/inimigos/gotinha.png');
+  imageGameOver = loadImage('assets/imagens/assets/game-over.png');
   somJogo = loadSound('assets/sons/trilha_jogo.mp3');
   somPulo = loadSound('assets/sons/somPulo.mp3');
 }
@@ -22,7 +24,6 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);  
   cenario = new Cenario(imagemCenario, 5);
-  //personagem = new Personagem(imagemPersonagem);
   personagem = new Personagem(4, 4, imagemPersonagem, 0, 110, 135, 220, 270, somPulo);
   inimigo = new Inimigo(7, 4, imagemInimigo, width - 52, 52, 52, 104, 104);
   frameRate(30);
@@ -50,14 +51,16 @@ function draw() {
   
   cenario.exibe(); 
   cenario.move();
+  
   personagem.exibe();
   personagem.aplicaGravidade();
+  
   inimigo.exibe();
   inimigo.move();
 
   if (personagem.estaColidindo(inimigo)) {
-    console.log('bateu');
-    somJogo.stop();
+    somJogo.setVolume(0, 0.4);
     noLoop();
+    image(imageGameOver, (width / 2) - (imageGameOver.width / 2), height / 2);
   }
 }

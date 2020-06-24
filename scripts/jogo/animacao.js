@@ -2,13 +2,13 @@ class Animacao {
     constructor(mtzLin, mtzCol, imagem, x, largura, altura, largSprite, altSprite) {
         this.imagem = imagem;
         
-        /* Posicao da imagem na tela */
-        this.x = x;
-        this.y = height;
-
         /* Largura/Altura da imagem final */
         this.largura = largura;
         this.altura = altura;
+
+        /* Posicao da imagem na tela */
+        this.x = x;
+        this.y = height - this.altura;
 
         /* Largura/Altura do sprite dentro da imagem */
         this.altSprite = altSprite;
@@ -24,11 +24,13 @@ class Animacao {
         this.frameAtual = 0;
 
         this.matriz = this.buildMatriz(this.mtzCol, this.mtzLin);
+
+        console.log(height, this.altura, this.y);
     }
 
     exibe() {
         image(this.imagem, 
-            this.x, this.y - this.altura, 
+            this.x, this.y, 
             this.largura, this.altura, 
             this.getMatrizX(this.matriz, this.frameAtual), this.getMatrizY(this.matriz, this.frameAtual),
             this.largSprite, this.altSprite);

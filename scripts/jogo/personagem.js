@@ -2,11 +2,11 @@ class Personagem  extends Animacao{
     constructor(mtzLin, mtzCol, imagem, x, largura, altura, largSprite, altSprite, somPulo) {
         super(mtzLin, mtzCol, imagem, x, largura, altura, largSprite, altSprite);
 
-        this.yInicial = height;
+        this.yInicial = height - this.altura;
         this.y = this.yInicial;
 
         this.velocidadePulo = 0;
-        this.gravidade = 3;
+        this.gravidade = 2.5;
 
         this.puloDuplo = 0;
         this.somPulo = somPulo;
@@ -31,13 +31,14 @@ class Personagem  extends Animacao{
     }
 
     estaColidindo(inimigo) {
-        /* Debug mode: desenha uma bordar para verificar colisao */
-        /*        
+        /* Debug mode: desenha uma borda para verificar colisao */                
+        /*
         rectMode(CORNER); // Default rectMode is CORNER
-        fill(255);
+        noFill();
         rect(this.x, this.y, this.largura, this.altura);
         rect(inimigo.x, inimigo.y, inimigo.largura, inimigo.altura);
         */
+       
         const precisao = 0.7;
         const colisao = collideRectRect(
             this.x, this.y, this.largura * precisao, this.altura * precisao,
