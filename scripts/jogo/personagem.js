@@ -1,6 +1,6 @@
 class Personagem  extends Animacao{
-    constructor(mtzLin, mtzCol, imagem, x, variacaoY, largura, altura, largSprite, altSprite, somPulo) {
-        super(mtzLin, mtzCol, imagem, x, variacaoY, largura, altura, largSprite, altSprite);
+    constructor(mtzLin, mtzCol, mtzTrim, imagem, x, variacaoY, largura, altura, largSprite, altSprite, somPulo) {
+        super(mtzLin, mtzCol, mtzTrim, imagem, x, variacaoY, largura, altura, largSprite, altSprite);
 
         this.variacaoY = variacaoY;
         this.yInicial = height - this.altura - this.variacaoY;

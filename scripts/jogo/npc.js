@@ -1,6 +1,6 @@
 class NonPlayerCharacter extends Animacao {
-    constructor(mtzLin, mtzCol, imagem, x, variacaoY, largura, altura, largSprite, altSprite, velocidade) {
-        super(mtzLin, mtzCol, imagem, x, variacaoY, largura, altura, largSprite, altSprite);
+    constructor(mtzLin, mtzCol, mtzTrim, imagem, x, variacaoY, largura, altura, largSprite, altSprite, velocidade) {
+        super(mtzLin, mtzCol, mtzTrim, imagem, x, variacaoY, largura, altura, largSprite, altSprite);
 
         this.velocidade = velocidade;
     }    

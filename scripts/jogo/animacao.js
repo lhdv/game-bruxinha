@@ -1,5 +1,5 @@
 class Animacao {
-    constructor(mtzLin, mtzCol, imagem, x, variacaoY, largura, altura, largSprite, altSprite) {
+    constructor(mtzLin, mtzCol, mtzTrim, imagem, x, variacaoY, largura, altura, largSprite, altSprite) {
         this.imagem = imagem;
         
         /* Largura/Altura da imagem final */
@@ -18,9 +18,10 @@ class Animacao {
         /* Qtde de linhas/colunas de sprites na imagem */
         this.mtzLin = mtzLin;
         this.mtzCol = mtzCol;
+        this.mtzTrim = mtzTrim;
 
         /* Qtde de frames de animacao na imagem */
-        this.frames = this.mtzLin * this.mtzCol;
+        this.frames = (this.mtzLin * this.mtzCol) - this.mtzTrim;
 
         this.frameAtual = 0;
 
@@ -28,12 +29,14 @@ class Animacao {
     }
 
     exibe() {
-         /* Debug mode: desenha uma borda para verificar colisao */                
+         /* Debug code: desenha uma borda para verificar colisao */                
         
-        rectMode(CORNER); // Default rectMode is CORNER
-        noFill();
-        rect(this.x, this.y, this.largura, this.altura);
-        
+        // rectMode(CORNER); // Default rectMode is CORNER
+        // noFill();
+        // rect(this.x, this.y, this.largura, this.altura);
+
+        /* Debug code: desenha uma borda para verificar colisao */                
+
         image(this.imagem, 
             this.x, this.y, 
             this.largura, this.altura, 
@@ -58,6 +61,10 @@ class Animacao {
                 matriz.push([positionX, positionY]);
             }
         }      
+
+        for (let i = 0; i < this.mtzTrim; i++) {
+            matriz.pop();    
+        }
 
         return matriz;
     }
