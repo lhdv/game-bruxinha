@@ -114,6 +114,7 @@ function draw() {
     if (inimigoAtual > inimigos.length -1) {
       inimigoAtual = 0;
     }
+    inimigo.velocidade = parseInt(random(5,15));    
   }
 
   if (personagem.estaColidindo(inimigo)) {
