@@ -56,8 +56,8 @@ function setup() {
   const inimigoGrande = new Inimigo(6, 5, 2, imagemInimigoGrande, width, 0, 150, 150, 400, 400, 6, 300);
 
   inimigos.push(inimigo);
-  // inimigos.push(inimigoVoador);
-  // inimigos.push(inimigoGrande);
+  inimigos.push(inimigoVoador);
+  inimigos.push(inimigoGrande);
   
   personagem = new Personagem(4, 4, 0, imagemPersonagem, 0, 20, 110, 135, 220, 270, somPulo);
   
@@ -93,8 +93,8 @@ function draw() {
   pontuacao.exibe();
   pontuacao.adicionaPonto();
   
-  npc.exibe();
-  npc.move();
+  // npc.exibe();
+  // npc.move();
 
   moeda.exibe();
   moeda.move();
