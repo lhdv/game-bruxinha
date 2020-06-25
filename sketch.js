@@ -14,6 +14,8 @@ let inimigo;
 let inimigoGrande;
 let inimigoVoador;
 
+const inimigos = [];
+
 /**
  * Roda antes do setup, apenas uma vez
  */
@@ -35,9 +37,13 @@ function setup() {
   
   npc = new NonPlayerCharacter(1, 1, 0, imagemAbelha, width - 39.8, 250, 39.8, 35.4, 398, 354, 9);
   
-  inimigo =  new Inimigo(7, 4, 0, imagemInimigo, width, 20, 52, 52, 104, 104, 8, 10);
-  inimigoGrande = new Inimigo(6, 5, 2, imagemInimigoGrande, width, 0, 150, 150, 400, 400, 6, 20);
-  inimigoVoador = new Inimigo(6, 3, 2, imagemInimigoVoador, width, 200, 100, 75, 200, 150, 6, 20);
+  const inimigo =  new Inimigo(7, 4, 0, imagemInimigo, width, 20, 52, 52, 104, 104, 8, 100);
+  const inimigoVoador = new Inimigo(6, 3, 2, imagemInimigoVoador, width, 200, 100, 75, 200, 150, 6, 200);
+  const inimigoGrande = new Inimigo(6, 5, 2, imagemInimigoGrande, width, 0, 150, 150, 400, 400, 6, 300);
+
+  inimigos.push(inimigo);
+  inimigos.push(inimigoVoador);
+  inimigos.push(inimigoGrande);
   
   personagem = new Personagem(4, 4, 0, imagemPersonagem, 0, 20, 110, 135, 220, 270, somPulo);
   
@@ -70,24 +76,21 @@ function draw() {
   cenario.exibe(); 
   cenario.move();
   
-  personagem.exibe();
-  personagem.aplicaGravidade();
-  
-  inimigo.exibe();
-  inimigo.move();
-
-  inimigoVoador.exibe();
-  inimigoVoador.move();
-
-  inimigoGrande.exibe();
-  inimigoGrande.move();
-
   npc.exibe();
   npc.move();
 
-  if (personagem.estaColidindo(inimigo) || personagem.estaColidindo(inimigoGrande)) {
-    somJogo.setVolume(0, 0.4);
-    noLoop();
-    image(imageGameOver, (width / 2) - (imageGameOver.width / 2), height / 2);
-  }
+  personagem.exibe();
+  personagem.aplicaGravidade();
+  
+  inimigos.forEach(inimigo => {
+    inimigo.exibe();
+    inimigo.move();
+
+    if (personagem.estaColidindo(inimigo)) {
+      somJogo.setVolume(0, 0.4);
+      noLoop();
+      image(imageGameOver, (width / 2) - (imageGameOver.width / 2), height / 2);
+    }
+  })
+
 }
