@@ -14,10 +14,10 @@ class Personagem  extends Animacao{
     }
 
     pula() {
-        this.puloDuplo++;
-        if (this.puloDuplo < 3) {
+        if (this.puloDuplo < 2) {
             this.velocidadePulo = -30;
             somPulo.play();
+            this.puloDuplo++;
         }
     }
 

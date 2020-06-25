@@ -13,6 +13,7 @@ let personagem;
 let inimigo;
 let inimigoGrande;
 let inimigoVoador;
+let pontuacao;
 
 const inimigos = [];
 
@@ -33,6 +34,9 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);  
+
+  pontuacao = new Pontuacao();
+
   cenario = new Cenario(imagemCenario, 5);
   
   npc = new NonPlayerCharacter(1, 1, 0, imagemAbelha, width - 39.8, 250, 39.8, 35.4, 398, 354, 9);
@@ -47,7 +51,7 @@ function setup() {
   
   personagem = new Personagem(4, 4, 0, imagemPersonagem, 0, 20, 110, 135, 220, 270, somPulo);
   
-  frameRate(30);
+  frameRate(40);
   somJogo.loop();
   somJogo.setVolume(0.2);
 }
@@ -75,6 +79,9 @@ function draw() {
   
   cenario.exibe(); 
   cenario.move();
+
+  pontuacao.exibe();
+  pontuacao.adicionaPonto();
   
   npc.exibe();
   npc.move();
