@@ -22,6 +22,7 @@ let inimigoVoador;
 let pontuacao;
 
 const inimigos = [];
+let inimigoAtual = 0;
 
 /**
  * Roda antes do setup, apenas uma vez
@@ -51,9 +52,9 @@ function setup() {
   npc = new NonPlayerCharacter(1, 1, 0, imagemAbelha, width - 39.8, 300, 39.8, 35.4, 398, 354, 9);
   moeda = new Item(1, 8, 0, imagemMoeda, width - 32, 200, 32, 32, 16, 16, 9, somMoeda);
   
-  const inimigo =  new Inimigo(7, 4, 0, imagemInimigo, width, 20, 52, 52, 104, 104, 8, 100);
-  const inimigoVoador = new Inimigo(6, 3, 2, imagemInimigoVoador, width, 200, 100, 75, 200, 150, 6, 200);
-  const inimigoGrande = new Inimigo(6, 5, 2, imagemInimigoGrande, width, 0, 150, 150, 400, 400, 6, 300);
+  const inimigo =  new Inimigo(7, 4, 0, imagemInimigo, width, 20, 52, 52, 104, 104, 8, 10);
+  const inimigoVoador = new Inimigo(6, 3, 2, imagemInimigoVoador, width, 200, 100, 75, 200, 150, 6, 10);
+  const inimigoGrande = new Inimigo(6, 5, 2, imagemInimigoGrande, width, 0, 150, 150, 400, 400, 6, 10);
 
   inimigos.push(inimigo);
   inimigos.push(inimigoVoador);
@@ -87,6 +88,9 @@ function draw() {
   /*background(220);*/
   /*circle(mouseX, mouseY, 100);*/
   
+  const inimigo = inimigos[inimigoAtual];
+  const inimigoVisivel = inimigo.x < (- inimigo.largura);
+
   cenario.exibe(); 
   cenario.move();
 
@@ -102,18 +106,23 @@ function draw() {
   personagem.exibe();
   personagem.aplicaGravidade();
   
-  inimigos.forEach(inimigo => {
-    inimigo.exibe();
-    inimigo.move();
+  inimigo.exibe();
+  inimigo.move();
 
-    if (personagem.estaColidindo(inimigo)) {
-      somJogo.setVolume(0, 0.4);
-      noLoop();
-      image(imageGameOver, (width / 2) - (imageGameOver.width / 2), height / 2);
-      somGameOver.play();
-      somGameOver.setVolume(0.5)
+  if (inimigoVisivel) {
+    inimigoAtual++;
+    if (inimigoAtual > inimigos.length -1) {
+      inimigoAtual = 0;
     }
-  })
+  }
+
+  if (personagem.estaColidindo(inimigo)) {
+    somJogo.setVolume(0, 0.4);
+    noLoop();
+    image(imageGameOver, (width / 2) - (imageGameOver.width / 2), height / 2);
+    somGameOver.play();
+    somGameOver.setVolume(0.5)
+  }
 
   if (personagem.estaColidindo(moeda)) {
     moeda.tocaSom();
