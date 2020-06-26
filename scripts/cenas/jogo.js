@@ -21,14 +21,18 @@ class Jogo {
         
         personagem = new Personagem(4, 4, 0, imagemPersonagem, 0, 20, 110, 135, 220, 270, somPulo);
 
-        somJogo.loop();
-        somJogo.setVolume(0.2);
+        
     }
 
     keyPressed(key) {
         if (key === 'ArrowUp' || key === ' ') {
             personagem.pula();
         }
+    }
+
+    start() {
+        somJogo.loop();
+        somJogo.setVolume(0.2);
     }
 
     draw() {
@@ -55,7 +59,7 @@ class Jogo {
       
         if (inimigoVisivel) {
           this.inimigoAtual++;
-          if (inimigoAtual > inimigos.length -1) {
+          if (this.inimigoAtual > inimigos.length -1) {
             this.inimigoAtual = 0;
           }
           inimigo.velocidade = parseInt(random(5,15));    

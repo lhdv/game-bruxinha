@@ -27,6 +27,7 @@ let pontuacao;
 const inimigos = [];
 
 let telaInicial;
+let btnGerenciador;
 let jogo;
 let cenaAtual = 'telaInicial';
 let cenas;

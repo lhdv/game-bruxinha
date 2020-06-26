@@ -9,11 +9,13 @@ function loadAssets() {
     imagemTelaInicial = loadImage('assets/imagens/assets/telainicial.png');
     imageGameOver = loadImage('assets/imagens/assets/game-over.png');
     
+    fonteTelaInicial = loadFont('assets/imagens/assets/fonteTelaInicial.otf')
+
     somJogo = loadSound('assets/sons/trilha_jogo.mp3');
     somPulo = loadSound('assets/sons/somPulo.mp3');
     somMoeda = loadSound('assets/sons/coin.mp3');
     somGameOver = loadSound('assets/sons/gameover.wav');
 
     telaInicial = new TelaInicial();
-    jogo = new Jogo();
+    jogo = new Jogo();    
 }

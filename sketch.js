@@ -15,6 +15,8 @@ function setup() {
     jogo: jogo,
     telaInicial: telaInicial
   };
+
+  btnGerenciador = new BotaoGerenciador("Iniciar", width / 2, height / 2);
 }
 
 /*
