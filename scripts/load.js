@@ -3,6 +3,7 @@ function loadAssets() {
     imagemAbelha = loadImage('assets/imagens/cenario/bee.png');
     imagemMoeda = loadImage('assets/imagens/cenario/moeda_16x16.png');
     imagemPersonagem = loadImage('assets/imagens/personagem/correndo.png');
+    imagemVida = loadImage('assets/imagens/assets/coracao.png');
     imagemInimigo = loadImage('assets/imagens/inimigos/gotinha.png');
     imagemInimigoGrande = loadImage('assets/imagens/inimigos/troll.png');
     imagemInimigoVoador = loadImage('assets/imagens/inimigos/gotinha-voadora.png');
