@@ -30,6 +30,10 @@ function keyTyped() {
   jogo.keyPressed(key);
 }
 
+function mouseClicked(event) {
+  jogo.mouseClicked(event);
+}
+
 function draw() {
   
   /* Codigo de Teste */

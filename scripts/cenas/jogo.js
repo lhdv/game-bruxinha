@@ -30,6 +30,10 @@ class Jogo {
         }
     }
 
+    mouseClicked(event) {
+      personagem.pula();
+    }
+
     start() {
         somJogo.loop();
         somJogo.setVolume(0.2);
