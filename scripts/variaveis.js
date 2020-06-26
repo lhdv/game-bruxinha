@@ -5,7 +5,10 @@ let imagemPersonagem;
 let imagemInimigo;
 let imagemInimigoGrande;
 let imagemInimigoVoador;
+let imagemTelaInicial;
 let imageGameOver;
+
+let fonteTelaInicial;
 
 let somJogo;
 let somPulo;
@@ -22,4 +25,8 @@ let inimigoVoador;
 let pontuacao;
 
 const inimigos = [];
-let inimigoAtual = 0;
+
+let telaInicial;
+let jogo;
+let cenaAtual = 'telaInicial';
+let cenas;

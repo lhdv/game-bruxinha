@@ -31,9 +31,9 @@ class Animacao {
     exibe() {
          /* Debug code: desenha uma borda para verificar colisao */                
         
-        rectMode(CORNER); // Default rectMode is CORNER
-        noFill();
-        rect(this.x, this.y, this.largura, this.altura);
+        // rectMode(CORNER); // Default rectMode is CORNER
+        // noFill();
+        // rect(this.x, this.y, this.largura, this.altura);
 
         /* Debug code: desenha uma borda para verificar colisao */                
 

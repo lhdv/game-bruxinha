@@ -6,9 +6,14 @@ function loadAssets() {
     imagemInimigo = loadImage('assets/imagens/inimigos/gotinha.png');
     imagemInimigoGrande = loadImage('assets/imagens/inimigos/troll.png');
     imagemInimigoVoador = loadImage('assets/imagens/inimigos/gotinha-voadora.png');
+    imagemTelaInicial = loadImage('assets/imagens/assets/telainicial.png');
     imageGameOver = loadImage('assets/imagens/assets/game-over.png');
+    
     somJogo = loadSound('assets/sons/trilha_jogo.mp3');
     somPulo = loadSound('assets/sons/somPulo.mp3');
     somMoeda = loadSound('assets/sons/coin.mp3');
     somGameOver = loadSound('assets/sons/gameover.wav');
+
+    telaInicial = new TelaInicial();
+    jogo = new Jogo();
 }
