@@ -96,6 +96,7 @@ class Jogo {
       }
 
       if (personagem.estaColidindo(inimigo)) {
+        somInimigoHit.play();
         vida.perdeVida();
         personagem.tornarInvencivel();
 

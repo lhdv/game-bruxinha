@@ -18,6 +18,8 @@ let somPulo;
 let somMoeda;
 let somGameOver;
 
+let somInimigoHit;
+
 let cenario;
 let npc;
 let moeda;

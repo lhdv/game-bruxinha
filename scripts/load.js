@@ -19,6 +19,7 @@ function preload() {
     somPulo = loadSound('assets/sons/somPulo.mp3');
     somMoeda = loadSound('assets/sons/coin.mp3');
     somGameOver = loadSound('assets/sons/gameover.wav');
+    somInimigoHit = loadSound('assets/sons/inimigo_hit.wav');
 
     cartucho = loadJSON('cartucho/fase01.json');
 
