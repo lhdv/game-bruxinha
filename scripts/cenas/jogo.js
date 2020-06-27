@@ -102,6 +102,12 @@ class Jogo {
         if (vida.vidas === 0) {
           somJogo.setVolume(0, 0.4);
           somJogo.stop();
+          
+          textAlign(CENTER);
+          textSize(30);
+          textFont(fonteTelaInicial);
+          text('Clique para jogar novamente', width / 2, (height - 10));
+
           noLoop();
           image(imageGameOver, (width / 2) - (imageGameOver.width / 2), height / 2);
           somGameOver.play();
