@@ -18,4 +18,8 @@ class Pontuacao {
     adicionaMoeda() {
         this.pontos += 10;
     }
+
+    zera() {
+        this.pontos = 0;
+    }
 }

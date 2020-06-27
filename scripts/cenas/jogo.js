@@ -35,11 +35,30 @@ class Jogo {
 
     mouseClicked(event) {
       personagem.pula();
-    }
 
+      if (vida.vidas === 0) {
+        this.reset();
+      }
+    }
+    
     start() {
-        somJogo.loop();
-        somJogo.setVolume(0.2);
+      somJogo.loop();
+      somJogo.setVolume(0.2);
+    }
+    
+    reset() {
+      vida.vidas = vida.total;
+      
+      pontuacao.zera();
+
+      inimigos.forEach((inimigo, i) => {
+        inimigo.x = width;
+      });
+      
+      this.indice = 0;
+        
+      this.start();
+      loop();
     }
 
     draw() {
@@ -82,6 +101,7 @@ class Jogo {
 
         if (vida.vidas === 0) {
           somJogo.setVolume(0, 0.4);
+          somJogo.stop();
           noLoop();
           image(imageGameOver, (width / 2) - (imageGameOver.width / 2), height / 2);
           somGameOver.play();
