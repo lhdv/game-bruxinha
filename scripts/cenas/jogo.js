@@ -1,30 +1,17 @@
 class Jogo {
     constructor() {
-        this.indice = 0;
-        this.mapa = [
-          {
-            inimigo: 0,
-            velocidade: 10
-          },
-          {
-            inimigo: 2,
-            velocidade: 30
-          },
-          {
-            inimigo: 2,
-            velocidade: 20
-          },
-          {
-            inimigo: 1,
-            velocidade: 40
-          }
-        ];
+      this.indice = 0;
+
+      // Espera carregar o mapa do JSON
+      setTimeout(() => {
+        this.mapa = cartucho.mapa;
+      }, 2000);
     }
 
     setup() {
       cenario = new Cenario(imagemCenario, 5);
       pontuacao = new Pontuacao();
-      vida = new Vida(3, 3);
+      vida = new Vida(cartucho.configuracoes.vidaMaxima, cartucho.configuracoes.vidaInicial);
 
       npc = new NonPlayerCharacter(1, 1, 0, imagemAbelha, width - 39.8, 300, 39.8, 35.4, 398, 354, 9);
       moeda = new Item(1, 8, 0, imagemMoeda, width - 32, 200, 32, 32, 16, 16, 9, somMoeda);

@@ -1,4 +1,7 @@
-function loadAssets() {
+/**
+ * Roda antes do setup, apenas uma vez
+ */
+function preload() {
     imagemCenario = loadImage('assets/imagens/cenario/floresta.png');
     imagemAbelha = loadImage('assets/imagens/cenario/bee.png');
     imagemMoeda = loadImage('assets/imagens/cenario/moeda_16x16.png');
@@ -16,6 +19,8 @@ function loadAssets() {
     somPulo = loadSound('assets/sons/somPulo.mp3');
     somMoeda = loadSound('assets/sons/coin.mp3');
     somGameOver = loadSound('assets/sons/gameover.wav');
+
+    cartucho = loadJSON('cartucho/fase01.json');
 
     telaInicial = new TelaInicial();
     jogo = new Jogo();    

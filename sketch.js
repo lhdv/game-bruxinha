@@ -1,9 +1,11 @@
-/**
- * Roda antes do setup, apenas uma vez
- */
-function preload() {
-  loadAssets();
-}
+
+// function preload() {
+
+//   setTimeout(() => {
+//     console.log('loading json');
+//   }, 2000);
+//   loadAssets();
+// }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);  

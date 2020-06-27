@@ -1,3 +1,5 @@
+let cartucho;
+
 let imagemCenario;
 let imagemAbelha;
 let imagemMoeda;
@@ -31,5 +33,5 @@ const inimigos = [];
 let telaInicial;
 let btnGerenciador;
 let jogo;
-let cenaAtual = 'jogo';
+let cenaAtual = 'telaInicial';
 let cenas;

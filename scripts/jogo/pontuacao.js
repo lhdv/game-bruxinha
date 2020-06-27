@@ -16,6 +16,6 @@ class Pontuacao {
     }
 
     adicionaMoeda() {
-        this.pontos += (this.fator * 10);
+        this.pontos += 10;
     }
 }
